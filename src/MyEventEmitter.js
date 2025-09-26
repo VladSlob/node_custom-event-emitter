@@ -44,15 +44,7 @@ class MyEventEmitter {
       this.listeners[eventName].splice(index, 1);
     }
   }
-  emit(eventName, ...args) {
-    const list = (this.listeners[eventName] || []).slice();
-
-    for (const callback of list) {
-      callback(...args);
-    }
-
-    return Boolean(list.length);
-  }
+ 
   prependListener(eventName, callback) {
     if (typeof callback !== 'function') {
       throw new TypeError('Callback must be a function');
