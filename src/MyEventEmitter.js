@@ -41,10 +41,7 @@ class MyEventEmitter {
     );
 
     if (index !== -1) {
-      this.listeners[eventName].splice(index, 1);
-    }
-  }
- 
+
   prependListener(eventName, callback) {
     if (typeof callback !== 'function') {
       throw new TypeError('Callback must be a function');
